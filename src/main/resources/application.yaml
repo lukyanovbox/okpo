@@ -1,0 +1,27 @@
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        prometheus: metrics
+      exposure:
+        include: health, info, httptrace, threaddump, mappings, prometheus
+#    default:
+#      web:
+#        enabled: true
+#endpoints:
+#
+
+#management.endpoint.metrics.enabled: true
+#management.endpoints.web.exposure.include: *
+#management.endpoint.prometheus.enabled: true
+#management.metrics.export.prometheus.enabled: true
